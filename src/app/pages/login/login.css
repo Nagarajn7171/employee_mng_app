@@ -1,0 +1,30 @@
+/* simple fade-in animation for the login card */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+/* center form and ensure full height */
+body, html {
+  height: 100%;
+}
+
+/* optional additional styling */
+.card {
+  border-radius: 1rem;
+}

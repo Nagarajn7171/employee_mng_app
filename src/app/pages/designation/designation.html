@@ -1,0 +1,107 @@
+<div class="container mt-4">
+
+<div class="card mb-4">
+<div class="card-header bg-primary text-white">
+Design Form
+</div>
+
+<div class="card-body">
+
+<form (ngSubmit)="saveDesign()">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<label class="form-label">Department</label>
+<select class="form-control" [(ngModel)]="design.deptId" name="deptId" required>
+
+<option value="">Select Department</option>
+
+<option *ngFor="let d of departments" [value]="d.deptId">
+{{d.deptName}}
+</option>
+
+</select>
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="form-label">Design Name</label>
+<input type="text"
+class="form-control"
+[(ngModel)]="design.designName"
+name="designName"
+maxlength="50"
+required>
+</div>
+
+</div>
+
+<button class="btn btn-success">
+{{isEdit ? 'Update' : 'Save'}}
+</button>
+
+<button type="button"
+class="btn btn-secondary ms-2"
+(click)="resetForm()">
+Clear
+</button>
+
+</form>
+
+</div>
+</div>
+
+<div class="card">
+
+<div class="card-header bg-dark text-white">
+Design List
+</div>
+
+<div class="card-body">
+
+<table class="table table-bordered table-striped">
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Department</th>
+<th>Design Name</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr *ngFor="let d of designs">
+
+<td>{{d.designId}}</td>
+<td>{{d.deptId}}</td>
+<td>{{d.designName}}</td>
+
+<td>
+
+<button class="btn btn-warning btn-sm me-2"
+(click)="editDesign(d)">
+Edit
+</button>
+
+<button class="btn btn-danger btn-sm"
+(click)="deleteDesign(d.designId!)">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+

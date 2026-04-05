@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center vh-100">
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card shadow-lg animated fadeIn">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">Sign In</h3>
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" name="email" [(ngModel)]="loginObj.email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" name="email" [(ngModel)]="loginObj.contactNo" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary w-100" (click)="onLogin()" >Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
